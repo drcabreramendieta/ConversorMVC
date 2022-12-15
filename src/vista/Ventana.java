@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
  * @author hola
  */
 public abstract class Ventana extends javax.swing.JFrame {
+    public abstract FahrenheitListener getFListener();
     public abstract String getCentigrados();
     public abstract void setFahrenheit(String fahr);
     public abstract void convertirListener(ActionListener l);

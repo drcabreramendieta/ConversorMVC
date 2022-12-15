@@ -6,20 +6,26 @@
 package vista;
 
 import java.awt.event.ActionListener;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 
 /**
  *
  * @author hola
  */
 public class Ventana1 extends Ventana{
-
+    FahrenheitListener fh;
     /**
      * Creates new form Ventana1
      */
     public Ventana1() {
         initComponents();
+        fh = new FahrenheitListener(this);
     }
-
+    
+    public FahrenheitListener getFListener(){
+        return fh;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

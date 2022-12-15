@@ -26,8 +26,6 @@ public class ManejadorConvertir implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent ae) {
         m.setCentigrados(Double.parseDouble(v.getCentigrados()));
-        double resultado = m.getFahrenheit();
-        v.setFahrenheit(resultado+"");
     }
     
 }

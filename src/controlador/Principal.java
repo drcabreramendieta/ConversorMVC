@@ -5,7 +5,7 @@
  */
 package controlador;
 import modelos.ConversorCF;
-import vista.Ventana2;
+import vista.Ventana1;
 import vista.Ventana;
 /**
  *
@@ -14,9 +14,10 @@ import vista.Ventana;
 public class Principal {
     public static void main(String[] args){
         ConversorCF m = new ConversorCF();
-        Ventana v = new Ventana2();
+        Ventana v = new Ventana1();
         ManejadorConvertir c = new ManejadorConvertir(v,m);
         v.convertirListener(c);
+        m.addListener(v.getFListener());
         v.setVisible(true);
     }
 }

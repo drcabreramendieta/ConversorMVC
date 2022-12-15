@@ -147,4 +147,9 @@ public class Ventana2 extends Ventana {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public FahrenheitListener getFListener() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

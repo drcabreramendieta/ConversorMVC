@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package modelos;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 
 /**
  *
@@ -12,15 +14,26 @@ package modelos;
 public class ConversorCF {
     private double centigrados;
     private double fahrenheit;
+    private PropertyChangeSupport mPcs;
 
+    public ConversorCF() {
+        mPcs = new PropertyChangeSupport(this);
+    }
+    
     public void setCentigrados(double centigrados) {
         this.centigrados = centigrados;
+        double oldFahr = this.fahrenheit;
         this.fahrenheit = this.centigrados * 1.8 + 32;
-    }
-
-    public double getFahrenheit() {
-        return fahrenheit;
+        mPcs.firePropertyChange("fahrenheit", 
+                oldFahr, 
+                this.fahrenheit);
     }
     
+    public void addListener(PropertyChangeListener pcl){
+        mPcs.addPropertyChangeListener(pcl);
+    }
     
+    public void removeListener(PropertyChangeListener pcl){
+        mPcs.removePropertyChangeListener(pcl);
+    }
 }
